@@ -13,7 +13,15 @@ To build the image type:
 	make image
 ```
 
-To deploy the hardware and code on our OPS-SAT test device type:
+This will create a directory ``./image`` that contains the bitstream to configure the FPGA fabric, ``./image/bitstream.rbf``, and a binary executable that can be run on the ARM HPS, ``./image/sw_driver.o``.
+
+These files can be deployed manually on our test machine. However, there is also a automated deployment script. To deploy the hardware and code on our OPS-SAT test device type:
 ```
 	make test_deploy
 ```
+This will ask you to type in the password for the device twice: once to transfer the image accross, and once to run the executable.
+
+
+### Version History
+
+* 0.0.1 - initial version, no checking logic added yet
