@@ -1,0 +1,3 @@
+[submodule "OSS-HAL"]
+	path = OSS-HAL
+	url = git@github.com:STFleming/OSS-HAL.git
