@@ -35,10 +35,29 @@ int main(int argc, char** argv) {
 
 		// Check first bit is correct
 		if (data & 1) {
-			 assert(chain->q == 1);
-		 } else {
-			 assert(chain->q == 0);
-		 }
+			assert(chain->q == 1);
+		} else {
+			assert(chain->q == 0);
+		}
+
+		if ((i % 50) == 0) {
+						chain->rst = 1;
+						chain->clk = 0;
+						chain->eval();
+						chain->clk = 1;
+						chain->eval();
+						chain->rst = 0;
+						chain->d = 0;
+						data = 0;
+						// Test reset
+						for (int j = 0; j < chain_length; j++) {
+										chain->clk = 0;
+										chain->eval();
+										chain->clk = 1;
+										chain->eval();
+										assert(chain->q == 0);
+						}
+		}
 	}
 	return 0;
 }
