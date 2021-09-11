@@ -1,15 +1,15 @@
 #include <verilated.h>
-#include "Vshift_chain.h"
+#include "Vshift_register.h"
 #include <iostream>
 
-Vshift_chain *chain;
+Vshift_register *chain;
 double sc_time_stamp() { return 0; }
 
 vluint64_t main_time = 0;
 int main(int argc, char** argv) {
 	Verilated::traceEverOn(true);
 	Verilated::commandArgs(argc, argv);
-	chain = new Vshift_chain;//{contextp};
+	chain = new Vshift_register;//{contextp};
 	const int chain_length = 16;
 	chain-> d = 0;
 	chain->clk = 0;

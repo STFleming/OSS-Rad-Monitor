@@ -1,15 +1,15 @@
 #include "verilated.h"
-#include "Vshift.h"
+#include "VD_type_flip_flop.h"
 #include <iostream>
 
-Vshift *dut;
+VD_type_flip_flop *dut;
 
 vluint64_t main_time = 0;
 int main(int argc, char** argv) {
 //	VerilatedContext* contextp = new VerilatedContext;
 ////	contextp->commandArgs(argc, argv);
 
-	dut = new Vshift;//{contextp};
+	dut = new VD_type_flip_flop;//{contextp};
 	dut-> d = 0;
 	dut->clk = 0;
 	dut->clk = 1;
